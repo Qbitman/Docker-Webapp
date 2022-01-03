@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  /* Google Fonts: https://fonts.google.com/?selection.family=Poppins*/
+  list-style: none;
+}
+
+
+body {
+  width:100%;
+  height: 100vh;
+  position: relative;
+  background-image: url('/static/img/bg-docker.jpg'); 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background-color: #313a45;
+  padding: 10px;
+}
+
+header .labelMenu {
+  color: #fff;
+}
+
+header .labelMenu:hover {
+  cursor: pointer;
+}
+
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+/* NAVGATION: */
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -205px;
+  bottom: 0;
+  min-width: 200px;
+  max-width: 200px;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-color: #fafafa;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.28);
+  transition: all 0.2s;
+  z-index: 50;
+}
+
+.menu h3 {
+  background-color: #313a45;
+  text-align: center;
+  color: #ddd;
+  padding: 18px;
+}
+
+.menu ul a {
+  display: flex;
+  padding: 10px;
+  color: #444;
+  transition: all 0.2s;
+}
+
+.menu a:hover {
+  background-color: #ddd;
+}
+
+.menu ul:first-child {
+  border-bottom: 1px solid #ddd;
+}
+/* A primeira <ul> do menu (primeiro filho (first-child)) */
+
+.menu ul a li:first-child {
+  margin-right: 10px;
+}
+
+/* A primeira <li> de cada <ul> do menu (primeiro filho (first-child)) (Icones) */
+
+/* Cores Icones */
+
+.menu ul a .icone2 {
+  color: #ff9933;
+}
+.menu ul a .icone3 {
+  color: #6666cc;
+}
+.menu ul a .icone4 {
+  color: #663300;
+}
+
+.menu ul:last-child a:hover li:first-child {
+  color: #222;
+}
+
+/* Na ultima <ul>, quando o mouse passas sobre os links de cada uma, a primeira <li> muda a cor para um cinza mais escuro */
+
+/* Opacidade quando o menu é aberto */
+
+.opacMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 40;
+}
+
+p {
+  text-align: center;
+  padding: 40px;
+  color: #ddd;
+  font-size: 50px;
+  text-shadow: 1px 1px 1px #222;
+}
+
+p span {
+  color: #ff3366;
+}
+
+.launch {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.form-select {
+cursor: pointer;
+}
+
+.shadow {
+ background-color: #f8f9fa;
+}
+
+.refresh {
+  display: flex;
+  text-align: center;
+}
+
+.refresh i {
+  padding-left: 10px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.btn {
+  font-size: 14px;
+  margin-top: 20px;
+} 
+
+.form-group {
+  margin-top: 20px;
+}
+
+.scroll-ps {
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.scroll-action {
+
+  max-height: 220px;
+  overflow-y: auto; 
+}
+
+.head {
+  padding: 1px;
+}
+
+
+#style-1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	
+}
+
+#style-1::-webkit-scrollbar
+{
+	width: 12px;
+	
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3); 
+	background-color: #696969;
+}
+
+
+.docker-img {
+  margin-left: 30px;
+  width: 500px;
+}

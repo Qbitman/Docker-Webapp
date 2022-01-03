@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} Get Started {% endblock title %}
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/index.css') }}">
+<header>
+  <div class="title">
+    <div class="input-group p-5">
+       <div class="box">
+  				<h2>Login</h2>
+  					<form action="/docker">
+    						<div class="inputBox">
+      							<input type="text" name="ip" id="ip" required onkeyup="this.setAttribute('value', this.value);" value="">
+      							<label>IP Address</label>
+    						</div>
+								<button type="button" onclick="getip()" class="btn submit"> Sign In </button>
+  					</form>
+				</div>
+    </div>
+  </div>
+</header>
+
+
+{% endblock body %}

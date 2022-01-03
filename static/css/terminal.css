@@ -1,0 +1,84 @@
+.terminal-btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  width: 150px;
+}
+
+.ip-cmd {
+  flex: 0 0 300px;
+  margin-top: 10px;
+  margin-right: 10px;
+  box-shadow: none;
+  border: 0;
+  border-color: none;
+  margin-bottom: 20px;
+}
+
+
+
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+
+.form-control:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+#rightcorner {
+  position: fixed;
+  bottom: -4px;
+  right: 30px;
+}
+
+
+.modal {
+  position: fixed;
+  top: auto;
+  right: 0;
+  bottom: 0;
+}
+.modal-dialog {
+  position: fixed;
+  width: 600px;
+  top: auto;
+  right: 0;
+  bottom: 0;
+} 
+
+.modal-header {
+  padding: 9px 15px;
+  border-bottom: 0 none;
+  background-color: #f8f9fa;
+}
+
+.modal-footer {
+  border-top: 0 none;
+}
+
+.modal-content {
+  background-color: #292b2c;
+}
+
+.cmd-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -10px;
+  color: #5cb85c;
+}
+
+
+.card-output {
+  height: 200px;
+}
+
+.card {
+  border: 4px solid #292b2c;
+  outline: none;
+}
+
+
+

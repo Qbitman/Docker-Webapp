@@ -1,0 +1,138 @@
+{% extends 'docker/docker-base.html' %}
+{% block title %} Home {% endblock title %}
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/terminal.css') }}">
+<div class="row launch">
+  <div class="col-12 col-sm-3">
+      <div class="card border-0 rounded-0 bg-light shadow my-3">
+        <div class="card-header">Launch Container</div>
+          <div class="card-body">
+              <div class="form-group">
+                <input class="form-control" placeholder="Container name" type="text" name="osname" id="osname" />
+              </div>
+              <div class="form-group">
+                <input type="number" placeholder="Host port" class="form-control" name="hport" id="hport" />
+              </div>
+              <div class="form-group">
+                <input type="number" placeholder="Container port" class="form-control" name="cport" id="cport" />
+              </div>
+              <div class="form-group">
+	        <select class="form-select" name="images" id="osimage">
+		    <option value="" hidden selected disabled>Choose Image</option>
+		    {% set images = images.split("\n") %}
+		    {% for i in images %}
+			<option value="{{ i }}">{{ i }}</option>
+		    {% endfor %}
+                 </select>
+              </div>
+              <input onclick="launch();" type="submit" value="Launch" class="btn btn-primary w-100" />
+          </div>
+        </div>
+    </div>
+
+
+   
+
+
+   
+   <div class="offset-sm-1 col-sm-7">
+     <div class="row">
+        <span class="m-2 refresh">
+          <h5 style="overflow-y:hidden;"> Running Containers </h5><a href="javascript:launch()"><i class="fa fa-refresh"></i> </a>
+        </span>
+	      <div class="scroll-ps p-3 mb-5 shadow" id="style-1">
+              <h6><div id="dockerps"><div></h6>
+	    </div>
+     </div>
+
+      <div class="row">
+       <div class="col-sm-4">
+	 <div class="card border-0 rounded-0 bg-light shadow my-3">
+	   <div class="card-header">Operations</div>
+	     <div class="card-body">
+	       <div class="form-group">
+                <input class="form-control" placeholder="name or ID" type="text" name="name" id="name" />
+               </div>
+	       
+	       <div class="form-group">
+	        <select class="form-select"  name="action" id="action">
+                    <option value="" hidden selected disabled>Action</option>
+                    <option value="start">Start</option>
+                    <option value="stop">Stop</option>
+                    <option value="rm">Delete</option>
+		    <option value="logs">Logs</option>
+		    <option value="inspect">Inspect</option>
+                 </select>
+              </div>
+              <input onclick="operation();" type="submit" value="Submit" class="btn btn-success w-100" />
+	     </div>
+         </div>
+       </div>
+
+     <div class="offset-sm-1 col-sm-7">
+            <h5 style="overflow-y:hidden;"> Output </h5>
+            <div class="scroll-action p-3 mb-5 shadow" id="style-1">
+             <div id="ops_output"></div>
+	    </div>
+     </div>
+
+
+      </div>
+
+    </div>
+
+</div>
+
+
+<!-- new -->
+
+<button type="type" class="btn btn-dark terminal-btn" data-toggle="modal" data-target="#exampleModal" id="rightcorner"><h6>Terminal
+ <i class="fad fa-angle-double-up"></i></h6></button>
+      
+      
+      <!-- Terminal Start -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h6 class="modal-title" id="exampleModalLabel"> root@localhost:~</h6>
+              <button type="button" class="btn btn-close" data-dismiss="modal">
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group cmd-input">
+                  <h6><b>[root@localhost ~]#</b></h6>
+                  <input type="text" class="form-control ip-cmd bg-dark text-white" id="cmd" name="cmd">
+                </div>
+                <div class="card">
+                  <div class="scroll-action bg-dark text-white card-body card-output" id="style-1">
+                      <h6 id="output"></h6>
+                  </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="run" onclick="command()" class="btn btn-outline-success">Run</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terminal End -->
+
+
+<!-- Hit Enter to run Command -->	
+<script> 	
+    var input = document.getElementById("cmd");
+    input.addEventListener("keyup", function(event) {
+        if(event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("run").click();
+        }
+    });
+</script>
+
+{% endblock body %}
+
+

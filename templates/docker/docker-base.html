@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+  <link href"https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.2/css/mdb.min.css" rel="stylesheet" >
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/docker.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/gif" size="16x16" >
+  <script src="{{ url_for('static', filename='js/docker-launch.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/pull-image.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/terminal.js') }}"></script>
+  
+  <title> {% block title %} {% endblock title %} | DockerT</title>
+</head>
+
+<body>
+  <header>
+    <label class="labelMenu"><i class="fa fa-bars" style="margin-left:5px;font-size:30px;margin-top: 5px;"></i>
+    </label>
+  </header>
+  
+  <div class="menu">
+    <h3><i class=""></i>DockerT</h3>
+    <nav>
+      <ul>
+        <a href="/docker">
+          <li class="icone1"><i class="fa fa-rocket"></i></li>
+          <li>Launch</li>
+        </a>
+  
+        <a href="/images">
+          <li class="icone2"><i class="fa fa-compact-disc"></i></li>
+          <li>Images</li>
+        </a>
+  
+        <a href="">
+          <li class="icone3"><i class="fa fa-file-code"></i></li>
+          <li>Dockerfile</li>
+        </a>
+  
+        <a href="">
+          <li class="icone4"><i class="fab fa-docker"></i></li>
+          <li>Doc</li>
+        </a>
+      </ul>
+  
+      <ul>
+        <a href="/">
+          <li class="icone5"><i class="fa fa-home"></i></li>
+          <li>Home</li>
+        </a>
+  
+        <a href="https://linkedin.com/in/chaitanyauge/">
+          <li class="icone6"><i class="fa fa-user"></i></li>
+          <li>About</li>
+        </a>
+      </ul>
+    </nav>
+  </div>
+  
+  <div class="opacMenu"></div>
+  
+  <!--  Jquery  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+    <script>
+
+    $(document).ready
+      (
+        function () {
+          $('.labelMenu').click
+            (
+              function () {
+                $('.menu').css('left', 0);
+                $('.opacMenu').fadeIn();
+              }
+            )
+
+          $('.opacMenu').click
+            (
+              function () {
+                $('.menu').css('left', '-205px');
+                $('.opacMenu').fadeOut();
+              }
+            )
+        }
+      )
+  </script>
+
+  {% block body %}
+
+  {% endblock body %}
+
+<!-- jQuery first (above added), then Popper.js, then Bootstrap JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!--
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+-->
+
+
+
+</body>
+
+</html>
